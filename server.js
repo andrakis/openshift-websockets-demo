@@ -3,6 +3,7 @@ var port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
 var WebSocketServer = require('ws').Server
 var http = require('http');
+var util = require('util');
 
 var server = http.createServer(function(request, response) {
     console.log((new Date()) + ' Received request for ' + request.url);
@@ -20,9 +21,9 @@ wss = new WebSocketServer({
     autoAcceptConnections: false
 });
 wss.on('connection', function(ws) {
-  console.log("New connection");
+  console.log("New connection: " + util.inspect(ws));
   ws.on('message', function(message) {
-    ws.send("Received: " + message);
+    ws.send("Received: " + util.inspect(message));
   });
   ws.send('Welcome!');
 });
