@@ -21,7 +21,11 @@ wss = new WebSocketServer({
     autoAcceptConnections: false
 });
 wss.on('connection', function(ws) {
-  console.log("New connection: " + util.inspect(ws));
+  //console.log("New connection: " + util.inspect(ws));
+    var target = ws['upgradeReq'];
+  for(var k in target) {
+      console.log("ws[" + k + "] = " + util.inspect(target[k]));
+  }
   ws.on('message', function(message) {
     ws.send("Received: " + util.inspect(message));
   });
