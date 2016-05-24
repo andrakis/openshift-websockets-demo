@@ -1,13 +1,13 @@
 Websocket Demo
---------------
+==============
 
 Purpose
-==============
+--------------
 
 Testing Websockets on OpenShift.
 
 How To
-==============
+--------------
 
 Push to an OpenShift instance, and then connect on port 8000.
 
