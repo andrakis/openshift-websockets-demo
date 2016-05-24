@@ -1,8 +1,20 @@
-The OpenShift `nodejs` cartridge documentation can be found at:
+Websocket Demo
+--------------
 
-https://github.com/openshift/origin-server/tree/master/cartridges/openshift-origin-cartridge-nodejs/README.md
+Purpose
+==============
 
+Testing Websockets on OpenShift.
 
+How To
+==============
 
-wscat --connect ws://nodesocket-cdaley.rhcloud.com:8000
+Push to an OpenShift instance, and then connect on port 8000.
+
+For command-line testing, use wscat:
+
+	wscat --connect ws://websockets-julian.freestyle.com:8000
+
+	This sample project is an "echo server". Anything you type will be printed
+	back to you from the server.
 
